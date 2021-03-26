@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <color name="latest_update_confirmed">#FFF59D</color>
+    <color name="latest_update_critical">#FFCC80</color>
+    <color name="latest_update_deaths">#FFAB91</color>
+    <color name="latest_update_recovered">#C5E1A5</color>
+
+    <color name="daily_update_confirmed">#FFF176</color>
+    <color name="daily_update_critical">#FFB74D</color>
+    <color name="daily_update_deaths">#FF8A65</color>
+    <color name="daily_update_recovered">#AED581</color>
+
+
 </resources>

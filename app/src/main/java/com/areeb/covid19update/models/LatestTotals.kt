@@ -5,6 +5,6 @@ data class LatestTotals(
     val critical: Long,
     val deaths: Long,
     val lastChange: String,
-    val lastUpdate: String,
+    var lastUpdate: String,
     val recovered: Long
 )
