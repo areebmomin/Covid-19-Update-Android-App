@@ -23,10 +23,11 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/latestUpdateCardView"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -42,6 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
                         android:text="@string/latest_update" />
 
                     <TextView
@@ -55,7 +57,7 @@
                         android:gravity="end"
                         android:text="@{viewModel.latestTotalLastUpdate}"
                         android:textSize="14sp"
-                        tools:text="\u2022 Updated At: 12:09" />
+                        tools:text="\u2022 Updated at: 12:09" />
 
                 </LinearLayout>
 
@@ -180,10 +182,11 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/dailyReportCardView"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
+                app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/latestUpdateRecoveredCardView">
@@ -201,6 +204,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="16dp"
                         android:layout_weight="1"
+                        android:gravity="center_vertical"
                         android:text="@string/daily_report" />
 
                     <Button
@@ -221,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/latest_update_circle"
-                android:backgroundTint="@color/daily_update_confirmed"
+                android:backgroundTint="@color/latest_update_confirmed"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp"
@@ -240,7 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportTotalCases}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -251,10 +255,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/latest_update_circle"
-                android:backgroundTint="@color/daily_update_recovered"
+                android:backgroundTint="@color/latest_update_recovered"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="18dp"
+                android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/dailyReportTotalCaseCardView"
                 app:layout_constraintTop_toBottomOf="@+id/dailyReportCardView">
@@ -270,7 +274,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportRecovered}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -281,10 +285,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/latest_update_circle"
-                android:backgroundTint="@color/daily_update_critical"
+                android:backgroundTint="@color/latest_update_critical"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:padding="8dp"
                 app:layout_constraintEnd_toStartOf="@+id/dailyReportDeathCardView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dailyReportTotalCaseCardView">
@@ -300,7 +304,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportCritical}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -311,10 +315,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/latest_update_circle"
-                android:backgroundTint="@color/daily_update_deaths"
+                android:backgroundTint="@color/latest_update_deaths"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/dailyReportCriticalCardView"
                 app:layout_constraintTop_toBottomOf="@+id/dailyReportRecoveredCardView">
@@ -330,7 +334,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportDeaths}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -338,10 +342,11 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/countryReportCardView"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
+                app:cardElevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dailyReportCriticalCardView">
@@ -352,9 +357,55 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"
+                    android:gravity="center_vertical"
                     android:text="@string/country_report" />
 
             </androidx.cardview.widget.CardView>
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/country_name_border"
+                android:gravity="center"
+                app:ccpDialog_showCloseIcon="true"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_countryAutoDetectionPref="SIM_ONLY"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_showPhoneCode="false"
+                app:ccp_textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/setDateCountryLinearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryReportCardView" />
+
+            <LinearLayout
+                android:id="@+id/setDateCountryLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/country_name_border"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+                app:layout_constraintTop_toBottomOf="@+id/countryReportCardView">
+
+                <TextView
+                    android:id="@+id/setDateCountrytextView"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/set_date"
+                    app:drawableEndCompat="@drawable/ic_arrow_down_"
+                    app:drawableTint="@color/black" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/dailyReportCountryTotalCaseCardView"
@@ -362,13 +413,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daily_report_country_rounded_rectangle"
-                android:backgroundTint="@color/daily_update_confirmed"
+                android:backgroundTint="@color/latest_update_confirmed"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp"
                 app:layout_constraintEnd_toStartOf="@+id/dailyReportCountryRecoveredCardView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/countryReportCardView">
+                app:layout_constraintTop_toBottomOf="@+id/countryCodePicker">
 
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Subtitle2"
@@ -381,7 +432,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportCountryTotalCases}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -392,13 +443,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/daily_report_country_rounded_rectangle"
-                android:backgroundTint="@color/daily_update_recovered"
+                android:backgroundTint="@color/latest_update_recovered"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="18dp"
-                app:layout_constraintStart_toEndOf="@+id/dailyReportCountryTotalCaseCardView"
+                android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/countryReportCardView">
+                app:layout_constraintStart_toEndOf="@+id/dailyReportCountryTotalCaseCardView"
+                app:layout_constraintTop_toBottomOf="@+id/setDateCountryLinearLayout">
 
                 <TextView
                     style="@style/TextAppearance.MaterialComponents.Subtitle2"
@@ -411,7 +462,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportCountryRecovered}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -421,12 +472,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/daily_report_country_rounded_rectangle"
-                android:backgroundTint="@color/daily_update_critical"
+                android:backgroundTint="@color/latest_update_critical"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
+                android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/dailyReportCountryDeathCardView"
                 app:layout_constraintStart_toStartOf="parent"
@@ -443,7 +494,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportCountryCritical}"
                     tools:text="10000" />
 
             </LinearLayout>
@@ -453,15 +504,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/daily_report_country_rounded_rectangle"
-                android:backgroundTint="@color/daily_update_deaths"
+                android:backgroundTint="@color/latest_update_deaths"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
+                android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/dailyReportCountryCriticalCardView"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dailyReportCountryCriticalCardView"
                 app:layout_constraintTop_toBottomOf="@+id/dailyReportCountryRecoveredCardView">
 
                 <TextView
@@ -475,7 +526,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/_0"
+                    android:text="@{viewModel.dailyReportCountryDeaths}"
                     tools:text="10000" />
 
             </LinearLayout>

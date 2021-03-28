@@ -18,5 +18,6 @@
     <color name="daily_update_deaths">#FF8A65</color>
     <color name="daily_update_recovered">#AED581</color>
 
+    <color name="link_color">#0000EE</color>
 
 </resources>
